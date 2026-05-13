@@ -1,0 +1,29 @@
+{
+  "name": "runway-api",
+  "version": "1.0.0",
+  "description": "API for finance tool Runway",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [
+    "fastify",
+    "typescript",
+    "finance",
+    "startup",
+    "runway"
+  ],
+  "author": "Gabriel Dallagnoli",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^5.8.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
