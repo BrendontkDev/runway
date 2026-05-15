@@ -401,3 +401,35 @@
     color: #f87171;
   }
 }
+
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-container {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg);
+}
+
+.chart-container h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text);
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}

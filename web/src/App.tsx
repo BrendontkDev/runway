@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { createTransaction, getKPIs, listTransactions } from './api'
 import type { CreateTransactionInput, FinanceKPIs, Transaction } from './types'
+import { TransactionTrendChart, CumulativeNetProfitChart, TransactionBreakdownChart } from './charts/TransactionCharts'
 import './App.css'
 
 const currency = new Intl.NumberFormat('en-US', {
@@ -128,6 +129,12 @@ function App() {
                 (kpis?.netProfit ?? 0) >= 0 ? 'profit-positive' : 'profit-negative'
               }
             />
+          </section>
+
+          <section className="charts-section" aria-label="Financial visualizations">
+            <TransactionTrendChart transactions={transactions} />
+            <CumulativeNetProfitChart transactions={transactions} />
+            <TransactionBreakdownChart transactions={transactions} />
           </section>
 
           <div className="dashboard-main">
