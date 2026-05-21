@@ -1,6 +1,6 @@
 import type { CreateTransactionInput, FinanceKPIs, Transaction } from './types'
 
-const BASE = 'https://runway-api-production.up.railway.app'
+const BASE = 'http://api.runway.dallag.com'
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {

@@ -1,0 +1,23 @@
+services:
+  api:
+    build: ./api
+    container_name: runway-api
+    expose:
+      - "3001"
+
+  web:
+    build: ./web
+    container_name: runway-web
+    expose:
+      - "80"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+      - api
